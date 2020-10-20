@@ -1,18 +1,52 @@
 package stepDefinition;
 
-import org.openqa.selenium.WebElement;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import pages.AmazonPage;
 import utility.TestBase;
 
 public class AmazonSearch extends TestBase {
 
-    public void method(){
-        WebElement dropdown =null;
-        WebElement Option =null;
-        act.moveToElement(dropdown).click().moveToElement(Option).click().perform();
+    AmazonPage amazon = new AmazonPage();
+//    Select select;
 
-        WebElement searchBox = null;
-        act.moveToElement(searchBox).click().sendKeys("Hazel").perform();
 
+    @Given("user is on events page")
+    public void user_is_on_events_page() {
+        driver.navigate().to("https://www.amazon.com/events/holidaydash?ref_=nav_td_dash_dt_cr");
+    }
+
+    @When("user clicks {string} option")
+    public void user_clicks_option(String string) {
+        amazon.topBrands.click();
+    }
+
+    @Then("{string} will be displayed")
+    public void will_be_displayed(String string) {
+        System.out.println("amazon.dealsOnTopBrands.isDisplayed() = " + amazon.dealsOnTopBrands.isDisplayed());
+    }
+
+    @When("user clicks Home & Seasonal option")
+    public void user_clicks_Home_Seasonal_option() {
+        amazon.homeAndSeasonal.click();
+    }
+
+    @Then("user should see Sort by {string} dropdown button")
+    public void user_should_see_Sort_by_dropdown_button(String string) {
+        System.out.println("amazon.dropdown.isDisplayed() = " + amazon.dropdown.isDisplayed());
+    }
+
+    @When("user clicks Sort by {string} dropdown button")
+    public void user_clicks_Sort_by_dropdown_button(String string) {
+        amazon.dropdown.click();
+    }
+
+    @Then("user should see {string} option")
+    public void user_should_see_option(String string) {
+//        amazon.dropdown.click();
+//        amazon.priceOption.click();
+//        System.out.println("amazon.priceOption.isDisplayed() = " + amazon.priceOption.isDisplayed());
     }
 
 

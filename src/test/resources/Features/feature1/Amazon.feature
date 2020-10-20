@@ -1,17 +1,33 @@
 @amazon
-Feature: Amazon
-
-  # runs before each scenarios only within this feature file
-  Background: go to website
-    When user goes to 'https://www.amazon.com' website
+Feature: Amazon Holiday Deals
 
 # 5 scenarios are needed
 
-  Scenario: search Apple product
-    And Enters "MacBook" in the search box
-    Then MacBook will be displayed
+  Scenario: click Top Brands
+    Given user is on events page
+    When user clicks 'Top Brands' option
+    Then 'Upcoming Deals' will be displayed
 
-  Scenario:
+  Scenario: click Top Brands
+    Given user is on events page
+    When user clicks 'Upcoming Deals' option
+    Then 'Deals on Top Brands' will be displayed
+
+  Scenario: click Home & Seasonal
+    Given user is on events page
+    When user clicks Home & Seasonal option
+    Then 'Deals on Home and Seasonal' will be displayed
+
+  Scenario: click Home & Seasonal
+    Given user is on events page
+    When user clicks Home & Seasonal option
+    Then user should see Sort by 'Featured' dropdown button
+
+  Scenario: click Home & Seasonal
+    Given user is on events page
+    When user clicks Home & Seasonal option
+    And user clicks Sort by 'Featured' dropdown button
+    Then user should see "Price - Low to High" option
 
 
-# 1.13
+
