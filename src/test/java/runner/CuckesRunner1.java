@@ -8,7 +8,9 @@ import org.junit.runner.RunWith;
 
 @CucumberOptions(
         features = "src/test/resources/Features/feature1",  // linked to the directory that has feature files
-        glue = "stepDefinition",
+
+        glue = "stepDefinition", // specify the path of the step definitions
+
         dryRun = false,
         /*
         when dry run is:
@@ -16,6 +18,7 @@ import org.junit.runner.RunWith;
                 false: first runs the step definition, then runs feature file
          */
         tags = "@google",   // used for specifying which scenario(s) or feature(s) files to run
+
         plugin = {
                 "json:target/Reports/JSON/cucumber.json",
                 "html:target/Reports/HTML/HTML_Report.html",
@@ -24,7 +27,13 @@ import org.junit.runner.RunWith;
         }, // used for generating reports,
 
         publish = true, // publishes a report for 24 hours only on website
-        //strict = true, // skips undefined tests
+
+        strict = true,
+        /*
+                true: skips undefined tests
+                 false: does not fail the execution and undefined steps
+        */
+
         monochrome = true // it means that the console output for the Cucumber test are much more readable
 
 )
@@ -34,20 +43,3 @@ public class CuckesRunner1 {
 
         
 }
-
-
-/*
- glue = "",  // specify the path of the step definitions
-        dryRun = false,  // when dry run is:
-                        //    false: the classes in glue' directory will run first then the features
-                        //    true: only runs the feature file
-
-        tags = "",   // used for specifying which scenario(s) or feature(s) files to run
-        plugin = {
-                "json:target/Reports/JSON/cucumber.json",
-                "html:target/Reports/HTML/default-html-reports",
-                "junit:target/Reports/JUNIT/MyJunit.xml",
-                "pretty:target/Reports/Pretty/Myprestty.txt"
-        } // used for generating reports
-
- */
