@@ -18,10 +18,11 @@ import org.junit.runner.RunWith;
         tags = "@google",   // used for specifying which scenario(s) or feature(s) files to run
         plugin = {
                 "json:target/Reports/JSON/cucumber.json",
-                "html:target/Reports/HTML/default-html-reports/HTML_Report.html",
+                "html:target/Reports/HTML/HTML_Report.html",
                 "junit:target/Reports/JUNIT/MyJunit.xml",
                 "pretty:target/Reports/Pretty/Myprestty.txt"
-        } // used for generating reports
+        }, // used for generating reports,
+        publish = true
 
 
 )
