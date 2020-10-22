@@ -15,10 +15,10 @@ import org.junit.runner.RunWith;
                 true: only the feature file will run, we can get the missing steps
                 false: first runs the step definition, then runs feature file
          */
-        tags = "@vYTrack",   // used for specifying which scenario(s) or feature(s) files to run
+        tags = "@google",   // used for specifying which scenario(s) or feature(s) files to run
         plugin = {
                 "json:target/Reports/JSON/cucumber.json",
-                "html:target/Reports/HTML/default-html-reports",
+                "html:target/Reports/HTML/default-html-reports/HTML_Report.html",
                 "junit:target/Reports/JUNIT/MyJunit.xml",
                 "pretty:target/Reports/Pretty/Myprestty.txt"
         } // used for generating reports
