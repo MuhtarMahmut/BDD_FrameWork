@@ -23,8 +23,9 @@ import org.junit.runner.RunWith;
                 "pretty:target/Reports/Pretty/Myprestty.txt"
         }, // used for generating reports,
 
-        publish = true // publishes a report for 24 hours only on website
-
+        publish = true, // publishes a report for 24 hours only on website
+        //strict = true, // skips undefined tests
+        monochrome = true // it means that the console output for the Cucumber test are much more readable
 
 )
 
