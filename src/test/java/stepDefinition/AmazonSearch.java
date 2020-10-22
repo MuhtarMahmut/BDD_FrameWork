@@ -3,13 +3,18 @@ package stepDefinition;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.WebElement;
 import pages.AmazonPage;
+import utility.BrowserUtils;
 import utility.TestBase;
+
+import javax.rmi.CORBA.Util;
+import java.util.concurrent.TimeUnit;
 
 public class AmazonSearch extends TestBase {
 
     AmazonPage amazon = new AmazonPage();
-//    Select select;
+
 
 
     @Given("user is on events page")
@@ -44,10 +49,13 @@ public class AmazonSearch extends TestBase {
 
     @Then("user should see {string} option")
     public void user_should_see_option(String string) {
-//        amazon.dropdown.click();
-//        amazon.priceOption.click();
+        act.moveToElement(amazon.dropdown).click().perform();
+        BrowserUtils.scrollToElement(amazon.priceOption);
+        act.moveToElement(amazon.priceOption).click().perform();
+
 //        System.out.println("amazon.priceOption.isDisplayed() = " + amazon.priceOption.isDisplayed());
     }
+
 
 
 }

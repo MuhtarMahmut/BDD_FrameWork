@@ -58,6 +58,9 @@ public class Driver {
                 WebDriverManager.getInstance(SafariDriver.class).setup();
                 driverPool.set(new SafariDriver());
                 break;
+
+            default:
+                throw new RuntimeException("No such a browser yet!");
         }
 
         return driverPool.get();
