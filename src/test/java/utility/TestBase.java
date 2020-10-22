@@ -27,7 +27,7 @@ public class TestBase {
 
     public static void AfterScenario(Scenario result){
 
-        if( !result.isFailed() ) {
+        if( result.isFailed() ) {
             byte[] t = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
             result.attach(t,"image/png", result.getName());
         }

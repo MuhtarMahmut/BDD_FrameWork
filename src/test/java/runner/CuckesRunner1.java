@@ -17,7 +17,7 @@ import org.junit.runner.RunWith;
                 true: only the feature file will run, we can get the missing steps
                 false: first runs the step definition, then runs feature file
          */
-        tags = "@google",   // used for specifying which scenario(s) or feature(s) files to run
+        tags = "@Hazel",   // used for specifying which scenario(s) or feature(s) files to run
 
         plugin = {
                 "json:target/Reports/JSON/cucumber.json",
@@ -28,7 +28,7 @@ import org.junit.runner.RunWith;
 
         publish = true, // publishes a report for 24 hours only on website
 
-        strict = true,
+       // strict = true,
         /*
                 true: skips undefined tests
                  false: does not fail the execution and undefined steps

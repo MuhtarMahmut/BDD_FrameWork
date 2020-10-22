@@ -99,8 +99,8 @@ public class vyTrack extends Login {
 
     }
 
-    @Given("user is on Page{int}")
-    public void user_is_on_Page(Integer int1) {
+    @Given("user is on Page 1")
+    public void user_is_on_Page() {
 
     }
 

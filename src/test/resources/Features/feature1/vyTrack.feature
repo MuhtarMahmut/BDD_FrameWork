@@ -45,13 +45,13 @@ Feature: vYTrack
 
   Scenario:
     Given user is on Vehicles Odometers module
-    And user is on Page1
+    And user is on Page 1
     When user right click page arrow option
     Then user should be able to go to the next page
 
   Scenario:
     Given user is on Vehicles Odometers module
-    And user is on Page2
+    And user is on Page 2
     When user left click page arrow option
     Then user should be able to go back to the previous page
 
@@ -59,3 +59,6 @@ Feature: vYTrack
     Given user is on Vehicles Odometers module
     When user clicks on the page input box
     Then user should be able to insert page numbers
+
+
+

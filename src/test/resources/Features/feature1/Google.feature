@@ -5,7 +5,7 @@ Feature: Google Search
   # cucumber annotations: @Given, @When, @Then, @Before, @After
   # in order to do parameterize, we use '' or ""
 
-  @smoke
+  @somke
   Scenario: Search Hazel on google
     Given Environment is ready
     When user enters 'Muhtar' in search box
