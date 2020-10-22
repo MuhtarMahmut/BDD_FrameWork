@@ -1,7 +1,6 @@
 package stepDefinition;
 
 import utility.TestBase;
-import io.cucumber.core.api.Scenario;
 import io.cucumber.java.*;
 
 public class hooks  {

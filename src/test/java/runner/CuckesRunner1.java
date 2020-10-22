@@ -9,19 +9,23 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/Features/feature1",  // linked to the directory that has feature files
         glue = "stepDefinition",
-        dryRun = true,
+        dryRun = false,
         /*
         when dry run is:
                 true: only the feature file will run, we can get the missing steps
                 false: first runs the step definition, then runs feature file
          */
-        tags = "@vytrack",   // used for specifying which scenario(s) or feature(s) files to run
+        tags = "@google",   // used for specifying which scenario(s) or feature(s) files to run
         plugin = {
                 "json:target/Reports/JSON/cucumber.json",
-                "html:target/Reports/HTML/default-html-reports",
+                "html:target/Reports/HTML/HTML_Report.html",
                 "junit:target/Reports/JUNIT/MyJunit.xml",
                 "pretty:target/Reports/Pretty/Myprestty.txt"
-        } // used for generating reports
+        }, // used for generating reports,
+
+        publish = true, // publishes a report for 24 hours only on website
+        //strict = true, // skips undefined tests
+        monochrome = true // it means that the console output for the Cucumber test are much more readable
 
 )
 

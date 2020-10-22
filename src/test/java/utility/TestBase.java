@@ -1,6 +1,8 @@
 package utility;
 
-import io.cucumber.core.api.Scenario;
+
+
+import io.cucumber.java.Scenario;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -24,16 +26,11 @@ public class TestBase {
     }
 
     public static void AfterScenario(Scenario result){
-            // in my hooks class in the @after i have passed scenario result and
-        // i can manage what do to if result is failed, or successed
 
-
-
-
-        if( result.isFailed() )
-            result.embed( ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES) ,"image/png" );
-
-        BrowserUtils.sleep(1);
+        if( !result.isFailed() ) {
+            byte[] t = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
+            result.attach(t,"image/png", result.getName());
+        }
         driver.quit();
     }
 
