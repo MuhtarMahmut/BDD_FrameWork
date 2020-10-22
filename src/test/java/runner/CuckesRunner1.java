@@ -22,7 +22,8 @@ import org.junit.runner.RunWith;
                 "junit:target/Reports/JUNIT/MyJunit.xml",
                 "pretty:target/Reports/Pretty/Myprestty.txt"
         }, // used for generating reports,
-        publish = true
+
+        publish = true // publishes a report for 24 hours only on website
 
 
 )
