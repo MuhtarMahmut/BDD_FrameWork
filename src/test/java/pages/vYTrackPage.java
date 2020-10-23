@@ -1,15 +1,12 @@
-package pages.vYtrackProject;
+package pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utility.TestBase;
 
-public class vYTrackPage extends Login{
+public class vYTrackPage extends BasePage{
 
-    public vYTrackPage(){
-        PageFactory.initElements(TestBase.driver, this);
-    }
 
     @FindBy(xpath ="" )
     public WebElement x1;

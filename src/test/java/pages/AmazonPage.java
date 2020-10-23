@@ -5,11 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utility.TestBase;
 
-public class AmazonPage {
+public class AmazonPage extends BasePage {
 
-    public AmazonPage(){
-        PageFactory.initElements(TestBase.driver,this);
-    }
 
     @FindBy(xpath = "//*[text()='Top Brands']")
     public WebElement topBrands;
@@ -23,7 +20,7 @@ public class AmazonPage {
     @FindBy(xpath = "//span[contains(text(),'Featured')]")
     public WebElement dropdown;
 
-    @FindBy(xpath = "//a[@id='dropdown-18510163916166533_1']")
+    @FindBy(xpath = "//a[contains(text(),'Price - Low to Hi')]")
     public WebElement priceOption;
 
 

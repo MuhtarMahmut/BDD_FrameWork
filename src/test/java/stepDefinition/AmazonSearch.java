@@ -49,9 +49,8 @@ public class AmazonSearch extends TestBase {
 
     @Then("user should see {string} option")
     public void user_should_see_option(String string) {
-        act.moveToElement(amazon.dropdown).click().perform();
-        BrowserUtils.scrollToElement(amazon.priceOption);
-        act.moveToElement(amazon.priceOption).click().perform();
+        act.moveToElement(amazon.dropdown).click().moveToElement(amazon.priceOption).click().perform();
+
 
 //        System.out.println("amazon.priceOption.isDisplayed() = " + amazon.priceOption.isDisplayed());
     }
