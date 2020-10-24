@@ -13,6 +13,7 @@ public class ExcelUtil {
     private Workbook workBook;
     private String path;
 
+    // when you create object of ExcelUtil you need to provide the path of excel file and name of the sheet
     public ExcelUtil(String path, String sheetName) {
         this.path = path;
         try {
