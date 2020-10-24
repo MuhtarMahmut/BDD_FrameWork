@@ -2,8 +2,9 @@
 Feature: user should be able to go to Vehicle Odometer page
 #Background - test pre-condition
 #will be executed before everything even scenario in this file only
-
+  @v
   Background: LogIn
+    Given user is on login page
     When user enters 'username' in username box
     And enters 'password' in password box
     Then user can log in
