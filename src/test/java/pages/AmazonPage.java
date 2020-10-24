@@ -3,13 +3,11 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import pages.pageUtility.BasePage;
 import utility.TestBase;
 
-public class AmazonPage {
+public class AmazonPage extends BasePage {
 
-    public AmazonPage(){
-        PageFactory.initElements(TestBase.driver,this);
-    }
 
     @FindBy(xpath = "//*[text()='Top Brands']")
     public WebElement topBrands;

@@ -7,9 +7,6 @@ import utility.TestBase;
 
 public class vYTrackPage extends Login{
 
-    public vYTrackPage(){
-        PageFactory.initElements(TestBase.driver, this);
-    }
 
     @FindBy(xpath ="" )
     public WebElement x1;
