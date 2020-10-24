@@ -19,7 +19,7 @@ Feature: Amazon Holiday Deals
     When user clicks Home & Seasonal option
     Then 'Deals on Home and Seasonal' will be displayed
 
-
+  @amazon
   Scenario: click Home & Seasonal
     Given user is on events page
     When user clicks Home & Seasonal option

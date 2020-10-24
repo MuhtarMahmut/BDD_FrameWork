@@ -3,10 +3,9 @@ package pages.vYtrackProject;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import pages.pageUtility.BasePage;
 import utility.ConfigReader;
 
-public class Login extends BasePage {
+public class Login {
 
     @FindBy(id = "prependedInput")
     public WebElement username;      //in class we did it private //To not use web elements directly in step definition classes
