@@ -3,6 +3,7 @@ package stepDefinition;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import pages.Library.AC_1;
 import utility.ConfigReader;
@@ -12,31 +13,31 @@ public class LibrarySearch extends TestBase {
 
     AC_1 ac1 = new AC_1();
 
-    @When("user enters {string} in email adress inputBox")
-    public void user_enters_in_email_adress_input_box(String string) {
-        ac1.emailAddressButton.sendKeys(string);
+    @Given("user is on the login page of library")
+    public void user_is_on_the_login_page_of_library() {
+        driver.get(ConfigReader.get("website"));
     }
 
-    @When("enters {string} in password input box")
-    public void enters_in_password_input_box(String string) {
-        ac1.passwordButton.sendKeys(string,Keys.ENTER);
+    @When("user enters username in the email box")
+    public void user_enters_username_in_the_email_box() {
+        ac1.emailAddressBox.sendKeys(ConfigReader.get("testlibrarian.username"));
     }
 
-    @Given("log in as a Test Librarian")
-    public void log_in_as_a_test_librarian() {
+    @When("user enters password in the password box")
+    public void user_enters_password_in_the_password_box() {
+        ac1.passwordBox.sendKeys(ConfigReader.get("testlibrarian.password")+Keys.ENTER);
+    }
 
+    @Then("title should change to {string}")
+    public void title_should_change_to(String string) {
+        boolean result = driver.getTitle().contains(string);
+        Assert.assertTrue(result);
     }
 
 
-    @When("I am under the books module")
-    public void i_am_under_the_books_module() {
 
-    }
 
-    @Then("Add Book header should be displayed.")
-    public void add_book_header_should_be_displayed() {
 
-    }
 
 
 

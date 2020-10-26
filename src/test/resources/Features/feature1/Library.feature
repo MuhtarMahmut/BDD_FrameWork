@@ -1,18 +1,15 @@
+@library
 Feature: As a User I should be able to add new book under the books module
 
+    Background: login
+      Given user is on the login page of library
+      When user enters username in the email box
+      And user enters password in the password box
+      Then title should change to 'Library'
 
-  @library
-  Scenario: login
-    Given user is on login page
-    When user enters "username" in email adress inputBox
-    And enters 'password' in password input box
-    Then user can log in
+    Scenario:
 
-  @library
-  Scenario: Click Book module
-  Given log in as a Test Librarian
-  When I am under the books module
-  Then Add Book header should be displayed.
+
 
 
 

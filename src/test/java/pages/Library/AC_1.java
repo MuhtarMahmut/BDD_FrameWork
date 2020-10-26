@@ -6,11 +6,11 @@ import pages.pageUtility.BasePage;
 
 public class AC_1 extends BasePage {
 
-    @FindBy(xpath ="//label[contains(text(),'Email address')]" )
-    public WebElement emailAddressButton;
+    @FindBy(xpath ="//input[@type='email']" )
+    public WebElement emailAddressBox;
 
-    @FindBy(xpath = "//label[contains(text(),'Password')]")
-    public WebElement passwordButton;
+    @FindBy(xpath = "//input[@type='password']")
+    public WebElement passwordBox;
 
 
 
