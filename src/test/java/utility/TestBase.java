@@ -22,7 +22,6 @@ public class TestBase {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-
     }
 
     public static void AfterScenario(Scenario result){

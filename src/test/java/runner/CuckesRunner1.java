@@ -17,25 +17,25 @@ import org.junit.runner.RunWith;
                 true: only the feature file will run, we can get the missing steps
                 false: first runs the step definition, then runs feature file
          */
-        tags = "@library",   // used for specifying which scenario(s) or feature(s) files to run
-
         plugin = {
                 "json:target/Reports/JSON/cucumber.json",
                 "html:target/Reports/HTML/HTML_Report.html",
                 "junit:target/Reports/JUNIT/MyJunit.xml",
-                "pretty:target/Reports/Pretty/Myprestty.txt"
-        }, // used for generating reports,
+                "pretty:target/Reports/Pretty/Myprestty.txt",
+                "rerun: target/rerun.txt"
+        },   // used for specifying which scenario(s) or feature(s) files to run
 
-        publish = true, // publishes a report for 24 hours only on website
+        tags = "@somke",// used for generating reports,
 
-       // strict = true,
+      //  publish = true, // publishes a report for 24 hours only on website
+        strict = true,
         /*
                 true: skips undefined tests
                  false: does not fail the execution and undefined steps
         */
 
         monochrome = true // it means that the console output for the Cucumber test are much more readable
-
+       // publish = true
 )
 
 public class CuckesRunner1 {
