@@ -11,12 +11,13 @@ import org.openqa.selenium.safari.SafariDriver;
 public class Driver {
 
     private Driver(){
+
     }
 
     private static InheritableThreadLocal<WebDriver> driverPool = new InheritableThreadLocal<>();
 
     public static WebDriver driver(){
-            String name = ConfigReader.get("browser");
+            String name = ConfigReader.get("browser").toLowerCase();
         switch (name) {
             case "chrome":
                 WebDriverManager.chromedriver().setup();

@@ -10,6 +10,8 @@ public class BasePage {
     }
 
 
+
+
     /*
     Every single class in Pages package MUST have IS A relation with this BasePage class
     and no constructor should be created in them

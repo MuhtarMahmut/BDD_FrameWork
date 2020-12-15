@@ -18,10 +18,12 @@ import org.junit.runner.RunWith;
                 "rerun:target/Rerun/rerun.txt"  // generates a text file automatically whenever test case fails
         },
         dryRun = false,
-        tags = "@somke" ,
+        tags = "@Zohra" ,
         monochrome = true,
-        publish = false
+        stepNotifications = true
 )
 public class CucksRunner {
 
+
 }
+

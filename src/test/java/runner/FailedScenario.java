@@ -16,7 +16,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
                 "html:target/Reports/FailedTests/failed_tests.html",
                 "junit:target/Reports/FailedTests/failed_tests.xml",
                 "pretty:target/Reports/FailedTests/failed_tests.txt",
-                "usage:target/Reports/FailedTests/failed_tests_usage.json",  // reports the usage
+                "usage:target/Reports/FailedTests/failed_tests_usage.json",
         },
         dryRun = false,
         monochrome = true
