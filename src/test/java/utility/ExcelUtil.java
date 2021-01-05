@@ -1,13 +1,12 @@
 package utility;
 
 import org.apache.poi.ss.usermodel.*;
-import org.junit.Assert;
-
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.*;
 
 public class ExcelUtil {
+
 
     private Sheet workSheet;
     private Workbook workBook;
@@ -24,7 +23,7 @@ public class ExcelUtil {
             workBook = WorkbookFactory.create(ExcelFile);
             workSheet = workBook.getSheet(sheetName);
             // check if sheet is null or not. null means  sheetname was wrong
-            Assert.assertNotNull("Sheet: \"" + sheetName + "\" does not exist\n", workSheet);
+            // Assert.assertNotNull("Sheet: \"" + sheetName + "\" does not exist\n", workSheet);
 
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -123,5 +122,26 @@ public class ExcelUtil {
     public int rowCount() {
         return workSheet.getLastRowNum() + 1;
     }
+
+
+    public String[] getFullColumns(int colNum) {
+        String[] data = new String[rowCount()-1];
+
+        Cell cell;
+        try {
+            for(int rowNum = 1, i=0; rowNum < rowCount(); rowNum++) {
+                cell = workSheet.getRow(rowNum).getCell(colNum);
+                data[i++] = cell.toString();
+            }
+            return data;
+
+        } catch (Exception e) {
+
+        }
+        return data;
+    }
+
+
+
 
 }
